@@ -69,3 +69,10 @@
         }
     }
     ```
+
+
+
+## 部分插件说明
+### ```uglifyjs-webpack-plugin```
+- [插件使用说明](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
+    - ```uglifyOptions``` [选项说明文档](https://github.com/mishoo/UglifyJS2#minify-options)
