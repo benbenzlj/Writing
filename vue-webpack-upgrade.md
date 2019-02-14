@@ -22,6 +22,42 @@
     "@vue/babel-plugin-transform-vue-jsx": "^0.1.0"
 }
 ```
+## webpack4 中新增参数Mode,根据Mode的值来自动加载默认配置
+-  development `开发环境`
+-  production `生产环境`
+
+## 依赖拆分
+```javascript
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+```
+
+## webpack.prod.conf.js
+
 
 ## 升级loader
 - `babel-loader`
@@ -30,7 +66,7 @@
 ## 插件
 - `html-webpack-plugin`
 - `extract-text-webpack-plugin` 替换为 `mini-css-extract-plugin`
-- `progress-bar-webpack-plugin` 进度条
+- `progress-bar-webpack-plugin` 进度条插件
 
 
 ### 问题
