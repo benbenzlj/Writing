@@ -99,7 +99,7 @@ namespace DesignPattern.AbstractFactory
             ClientMethod(new ConcreteFactory1());
             Console.WriteLine();
 
-            Console.WriteLine("");
+            Console.WriteLine("Client：Testing the same client code with the second factory type..");
             ClientMethod(new ConcreteFactory2());
         }
 
